@@ -61,7 +61,8 @@ function move_player()
 		p.x += 1
 	end
 	
-	if btnp(5, 0) then
+	if btnp(5, 0) and 
+		p.grounded then
 		p.jump = true
 	end
 	
@@ -84,8 +85,8 @@ function player_jump()
 
 	if p.jump and 
 		p.jump_height < 30 then	
-		p.y -= 2
-		p.jump_height += 2
+		p.y -= 5
+		p.jump_height += 5
 	else
 		p.jump = false
 		p.jump_height = 0
